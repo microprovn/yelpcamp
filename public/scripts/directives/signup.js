@@ -8,15 +8,16 @@ angular.module('campgrounds')
                 $scope.$on("resetForm", ()=>{
                     $('#signupform')[0].reset()
                     $scope.error = "" ;
+                    $scope.password_error = ""
                 })
                 $scope.signup = function(){
                     console.log($scope.username) ;
                     if($scope.password === $scope.confirm_password) {
                         Auth.signup($scope.username, $scope.password).success(function(response){
-                            console.log(response)
+                            //console.log(response)
                             if(!response.error.error) {
                                 $rootScope.locals = response ;
-                                console.log(response) ;
+                                //console.log(response) ;
                                 if(response.currentUser) {
                                     $scope.$emit('signup')
                                     $('#signup-modal').modal('hide')
@@ -29,7 +30,7 @@ angular.module('campgrounds')
                             
                     }
                     else {
-                        console.log("p not match")
+                        //console.log("p not match")
                         $scope.password_error = "Confirm password do not match"
                     }
                 }
