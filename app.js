@@ -24,8 +24,8 @@ var indexRoutes = require("./routes/index");
     
 //seedDB() ;  
 //Connect to db. V3 added Comments
-mongoose.connect("mongodb://localhost/yelp_camp_v9");
-//mongoose.connect("mongodb://namnguyen:daniel2007@ds061355.mlab.com:61355/yelpcamplab");
+//mongoose.connect("mongodb://localhost/yelp_camp_v9");
+mongoose.connect("mongodb://namnguyen:daniel2007@ds061355.mlab.com:61355/yelpcamplab");
 //Use body-parser to parse the http request and get params
 app.use(bodyParser.urlencoded({extended: true})) ;
 app.use(bodyParser.json({extended: true})) ;
