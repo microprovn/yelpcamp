@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>YelpCamp</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="/stylesheets/main.css"/>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        
+     
+        
+        
+        <script src="/bower_components/angular/angular.js"></script>
+        
+        <script src="/bower_components/angular-route/angular-route.js"></script>
+        s
+        <script src="/scripts/app.js"></script>
+        <script src="/scripts/directives/modal.js"></script>
+        <script src="/scripts/directives/login.js"></script>
+        <script src="/scripts/directives/signup.js"></script>
+        
+        <script src="/scripts/showcamp.js"></script>
+        <script src="/scripts/campgrounds.js"></script>
+        <script src="/scripts/services/camp-service.js"></script>
+        <script src="/scripts/services/showcamp-service.js"></script>
+        
+       
+        
+    </head>
+    
+    <% if(!currentUser) { 
+        var user = ""
+    } else {
+        var user = currentUser ;
+        //console.log(user);
+    } %>
+     
+    <body ng-app="campgrounds" ng-init="currentUser='<%=user.username%>'">
+    <%include ../navbar %>
+    
+   
+   

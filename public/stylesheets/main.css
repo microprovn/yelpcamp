@@ -1,0 +1,60 @@
+html ,  body{
+   background : #ddd ; 
+    color : #ddd ;
+}
+
+
+
+#thumbnail-mainpage img{
+    width: 100%;
+    height: 200px
+}
+
+.img-responsive {
+    width: 100%;
+}
+
+#thumbnail-showpage img {
+    height: inherit ;
+}
+
+.thumbnail {
+    padding: 0 ;
+   
+    
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+.image-thumbnail {
+    width: 100%;
+    min-height: 200px;
+}
+
+
+.camp-caption{
+    text-align: left;
+    padding-left: 10px ;
+}
+
+
+.modal-body{
+    padding : 0px 15px 0px 15px ;
+}
+
+.modal-footer{
+    margin-top : -20px;
+    border-top-width: 0px ;
+}
+
+
+#image-avatar {
+    height: 80px;
+    width: 80px ;
+}
+
+a {
+    margin-right: 10px;
+}

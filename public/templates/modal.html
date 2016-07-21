@@ -1,0 +1,73 @@
+ 
+
+  <!-- Modal -->
+<div ng-controller="ShowCampController as showcamp">
+    
+    <div id="{{id}}" class="modal fade" role="dialog" >
+      <div class="modal-dialog" style="width:70%">
+         <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                  <div id="camp">
+                      <div id="thumbnail-showpage" class="thumbnail" style="border-width:0">
+                          <img class="img-responsive" ng-src="{{showcamp.data.image}}">
+                          <div class="camp-caption">
+                            <div class="caption-full">
+                              <h4 ><a>{{showcamp.data.name}}</a></h4>
+                              <p>{{showcamp.data.description}} </p> 
+                              <p>
+                                <em>Created by: {{showcamp.data.author.username}}</em><br>
+                                <em>Date: {{camp.created | date:'MMM d, yyyy' }}</em>
+                              </p>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="well" ng-controller="CommentController">
+                      <form id="addComment">  
+                        <div class="form-group">
+                          <h6 class="pull-left" style="color:red">{{message}}</h6>
+                          <textarea class="form-control" rows="3" ng-model="comment.text" name="text" ></textarea>
+                        </div>
+                        <div class="form-group text-right" >
+                            <button id="addCommentBtn" class="btn btn-success" value="Add New Comment" ng-click="addComment()">Add Comment</button>
+                        </div>  
+                      </form>
+                     
+                      
+                      <h4 class="pull-left"><em>Comments</em></h4>
+                      <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                          <div ng-repeat="comment in showcamp.data.comments | orderBy : '-created' " style="text-align:left" >
+                            <hr>
+                            <em>Created by: <strong>{{comment.author.username}}</strong></em>
+                            <span class="pull-right"><em>{{comment.created | date:'MMM d, yyyy' }}</em></span>
+                            <div comment>
+                              <div id="comment-area" style="margin-top: 15px; ">
+                                <p class="comment-text" contenteditable="false" ng-model="comment.text"> {{comment.text}}</p>
+                              </div>
+                              <div id="editgroup" ng-show="isOwner">
+                              <a id="editbtn" href="">Edit</a>
+                              <a href="" ng-click="delete($index)">Delete</a>
+                        
+                              <a class="updatebtn" href="" style="display: none" ng-click="updateComment()">Update</a>
+                              <a class="cancelbtn" href="" style="display: none" ng-click="cancel()">Cancel</a>
+                              </div>
+                              
+                            </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+</div>

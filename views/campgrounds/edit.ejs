@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <h1 style="text-align:center">Edit <%=campground.name%></h1>
+    <div style="width:50%; margin: 25px auto">
+        <form action="/campgrounds/<%=campground._id%>?_method=PUT" method="POST" id="updateform">
+            <div class="form-group">
+                <input class="form-control" type="text" name="campground[name]" placeholder="name" value="<%=campground.name%>">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="campground[image]" placeholder="image url" value="<%=campground.image%>">
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" rows="5"  name="campground[description]" placeholder="description"><%=campground.description%></textarea> 
+            </div>
+        </form>
+        <form  id="deleteform"  action="/campgrounds/<%=campground._id%>?_method=DELETE" method="POST"></form>
+        <div class="form-group">
+            <button type="submit" form="updateform" class="btn btn-large btn-primary ">Update</button> 
+            <button id="dbtn" class="btn btn-large btn-danger " href="" data-toggle="modal" data-target="#delete-modal">Delete</button>
+            <a class="btn btn-large btn-default " href="/home">Cancel</a>
+        </div>
+        
+        <deletecamp name="<%=campground.name%>" id="<%=campground._id%>"></deletecamp>
+        
+       
+        <a style="display:block" href="/home">Go Back</a>
+    </div>
+    
+</div>
+
+
+<% include ../partials/footer %>

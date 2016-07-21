@@ -1,0 +1,20 @@
+{
+  "name": "YelpCamp",
+  "description": "YelpCamp v1",
+  "main": "index.js",
+  "authors": [
+    "Nam Nguyen"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "angular-route": "^1.5.7",
+    "ng-tour": "ng-route#*",
+    "angular": "^1.5.7",
+    "bootstrap": "^3.3.6",
+    "font-awesome": "^4.6.3",
+    "angular-ui": "^0.4.0",
+     "angular-ui-grid": "^3.2.1"
+  }
+}

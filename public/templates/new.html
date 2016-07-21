@@ -1,0 +1,27 @@
+
+
+<div class="container" style="margin-top: 80px" ng-controller="NewCampController">
+    <h1 style="text-align:center">Create a New Campground</h1>
+    <h4 style="text-align:center">{{message}}</h4>
+    <div style="width:30%; margin: 25px auto">
+        <form  id="addForm">
+            <div class="form-group">
+                <input class="form-control" type="text" name="name" placeholder="name" ng-model="campground.name" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="text" name="image" placeholder="image url" ng-model="campground.image" required>
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" name="description" placeholder="description" ng-model="campground.description" required></textarea> 
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-large btn-primary btn-block" ng-click="addNewCamp()">Submit!</button>
+            </div>
+        </form>
+        <a href="#/">Go Back</a>
+    </div>
+    
+</div>
+
+
+<!--action="/campgrounds" method="POST"-->

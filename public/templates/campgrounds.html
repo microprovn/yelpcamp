@@ -1,0 +1,29 @@
+<div class="container">
+            
+            <header class="jumbotron" ; style="margin-top: 80px">
+                <div class="container">
+                    <h1>Welcome to YelpCamp</h1>
+                    <p>View our hand-picked campgrounds from all over the world</p>
+                    <p>
+                        <a class="btn btn-primary btn-large" ng-click="addCamp()" uib-popover="{{alert}}" popover-trigger="mouseenter" popover-placement="right" ng-mouseenter="checkAuth()">Add new campground</a>
+                        
+                    </p>
+                </div>
+            </header>
+                <div class="row text-center" style="display:flex ; flex-wrap:wrap" >
+                    <div class="col-md-3 col-sm-6" ng-repeat="camp in camps | orderBy: '-name'">
+                        <div id="thumbnail-mainpage" class="thumbnail" ng-init="id=(camp._id)">
+                            <div>
+                                <img class="image-thumbnail" ng-src="{{camp.image}}">
+                            </div>
+                            <div class="caption">
+                                <h4 style="overflow: hidden">{{camp.name}}</h4>
+                            </div>
+                             <p>
+                                <button class="btn btn-primary btn-large" data-toggle="modal" data-target="#{{camp._id}}" ng-click="moreinfo()">More Info</button>
+                             </p>
+                             <showcamp></showcamp>
+                        </div>
+                    </div>
+                </div>
+</div>
