@@ -30,9 +30,12 @@ router.post("/", middleware.isLoggedIn, jsonParser , function(req,res){
    Campground.findById(req.params.id, function(err,campground){
        if(err){
            console.log(err);
-           res.redirect("/campgrounds");
+           //res.redirect("/campgrounds");
+           req.flash("error" , "Cannot find campground")
+            res.locals.error = req.flash();
+            res.send(res.locals)
        } else {
-           console.log(req.body) ;
+           //console.log(req.body) ;
            Comment.create(req.body.comment, function(err, comment){
               if(err){
                   console.log(err);
@@ -79,7 +82,7 @@ router.get("/:commentId/edit", middleware.checkCommentOwnership , function(req,r
 
 // Edit Comment logic 
 router.put("/:commentId", middleware.checkCommentOwnership , function(req,res){
-    console.log(req.body)
+    //console.log(req.body)
   Comment.findByIdAndUpdate(req.params.commentId, req.body.comment ,function(err,comment){
       if(err){
         req.flash("error" , "Comment id not found")

@@ -62,6 +62,7 @@ angular.module('campgrounds')
             $scope.updateComment = function( ){
                 
                 comment.text = $element.find('.comment-text').text() ;
+                console.log($scope)
                 if(comment.text.length !== 0 ){
                     Comment.update($scope.camp._id, $scope.comment._id ,{comment: comment} ).then(function(response){
                         if(response.status === 200) {

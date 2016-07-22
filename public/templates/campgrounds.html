@@ -1,17 +1,14 @@
-<div class="container">
-            
+<div id="camps-container" class="container" >
             <header class="jumbotron" ; style="margin-top: 80px">
                 <div class="container">
                     <h1>Welcome to YelpCamp</h1>
                     <p>View our hand-picked campgrounds from all over the world</p>
-                    <p>
-                        <a class="btn btn-primary btn-large" ng-click="addCamp()" uib-popover="{{alert}}" popover-trigger="mouseenter" popover-placement="right" ng-mouseenter="checkAuth()">Add new campground</a>
-                        
-                    </p>
+                    <a class="btn btn-primary btn-large" ng-click="addCamp()" uib-popover="{{alert}}" popover-trigger="mouseenter" popover-placement="right" ng-mouseenter="checkAuth()">Add new campground</a>
                 </div>
             </header>
-                <div class="row text-center" style="display:flex ; flex-wrap:wrap" >
-                    <div class="col-md-3 col-sm-6" ng-repeat="camp in camps | orderBy: '-name'">
+            <div class="container">
+                <div id="listcamps" class="row text-center" style="display:flex ; flex-wrap:wrap" >
+                    <div id="camp-item" class="col-md-3 col-sm-6" ng-repeat="camp in camps | orderBy: '-name'">
                         <div id="thumbnail-mainpage" class="thumbnail" ng-init="id=(camp._id)">
                             <div>
                                 <img class="image-thumbnail" ng-src="{{camp.image}}">
@@ -26,4 +23,5 @@
                         </div>
                     </div>
                 </div>
+            </div>
 </div>

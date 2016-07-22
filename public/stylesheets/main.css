@@ -1,13 +1,103 @@
-html ,  body{
-   background : #ddd ; 
-    color : #ddd ;
+ html body{
+    margin:0;
+    padding:0;
+    height:100%; 
+    width : 100%;
+    /*background: url(http://misadventuresmag.com/wp-content/uploads/2015/06/Camping-Near-The-Lake-Background-Wallpaper-e1437489294343.jpg) top right repeat;*/
+    background: url(https://images.unsplash.com/photo-1445308394109-4ec2920981b1?dpr=2&fit=crop&fm=jpg&h=825&ixlib=rb-0.3.5&q=50&w=1450);
+    background-attachment: fixed;
+    background-position: center ; 
+    background-size: cover;
+    /*background-repeat: repeat;*/
+  
+ } 
+ 
+
+
+#mainpage{
+    opacity: .99 ;
+    width: 100% ;
+    height: 100%;
+    padding: 0;
+}
+
+#view {
+    overflow: hidden
+    
+}
+
+#camps-container{
+    width: 100%;
+    height: 100% ;
+    overflow: auto;
+    -ms-overflow-style: none;
+}
+#camps-container::-webkit-scrollbar { 
+    width: 0 !important 
+    
+}
+
+.modal-open .modal::-webkit-scrollbar { 
+    width: 0 !important ;
+}
+
+.popover {
+    background: 0;
+}
+
+textarea{
+    resize: none;
+}
+
+#navbar{
+    background: 0;
+    border-bottom: 0px ;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: rgb(250,250,250);
+}
+
+.navbar-default .navbar-brand {
+    color:rgb(250,250,250);
+}
+
+.jumbotron{
+    background: 0;
+    color: oldlace;
+    text-align: center
+}
+
+.modal-content{
+    background : rgba(255,255,255,0.8);
+}
+
+#thumbnail-mainpage{
+    background : rgba(255,255,255,0.8);
+}
+
+#thumbnail-mainpage img{
+    width: 100%;
+    height: 200px;
+   
 }
 
 
 
-#thumbnail-mainpage img{
-    width: 100%;
-    height: 200px
+.thumbnail a>img, .thumbnail>img {
+    max-height: 800px
+}
+
+#listcamps{
+    
+}
+
+#camp-item{
+    margin-bottom: 25px;
+}
+
+#showcamp-content{
+    background: rgb(255,255,255);
 }
 
 .img-responsive {
@@ -19,8 +109,8 @@ html ,  body{
 }
 
 .thumbnail {
-    padding: 0 ;
-   
+   padding: 0 ;
+   margin: 0;
     
 }
 
@@ -57,4 +147,13 @@ html ,  body{
 
 a {
     margin-right: 10px;
+}
+
+.modal-backdrop.fade.in{
+    z-index:-1
+}
+
+md-default-theme, md-content{
+    background: rgba(255,255,255,0.5);
+    border-radius: 8px;
 }

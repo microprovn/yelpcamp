@@ -90,7 +90,6 @@ angular.module('campgrounds')
             }
         })
     }
-    
     $scope.cancel = function(){
         $scope.campground.name = restore.name ;
         $scope.campground.image = restore.image ;
@@ -99,6 +98,7 @@ angular.module('campgrounds')
     }
 }).controller('ListItemController', function($scope){
     $scope.id = $scope.n._id ;
+    $scope.camp = $scope.n
     $scope.review = function(){
         $scope.$broadcast('review');
     }

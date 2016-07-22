@@ -1,17 +1,17 @@
 <div ng-controller="NavController as nav">
-<nav class="navbar navbar-default navbar-fixed-top" style="max-height: 20px"  >
+<nav id="navbar"  class="navbar navbar-default navbar-fixed-top" style="max-height: 20px"  >
         <div class="container-fluid" style="max-height: 20px; text-alignment: center;  ">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="" ng-click="home()">YelpCamp</a>
+            <div class="navbar-header" >
+                <a class="navbar-brand" href="" ng-click="home()" >YelpCamp</a>
             </div>
             <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right" >
                         <li ng-if="!nav.username"><a style="outline: none" href="" data-toggle="modal" data-target="#login-modal" >Login</a></li>
                         
                         <li ng-if="!nav.username"><a href="" style="outline: none" href="" data-toggle="modal" data-target="#signup-modal" ng-click="resetForm()">Sign Up</a></li>
-                        <li ng-if="nav.username"><a href="#/">Signed In As: {{nav.username}}</a>
-                        <li ng-if="nav.username"><a href="#/campgrounds/yourpost" >Your Posts</a>
-                        <li ng-if="nav.username"><a logout href="" ng-click="logout()">Logout</a></li>
+                        <li ng-if="nav.username"><a href="#/" ><i class="fa fa-user" aria-hidden="true"></i> Signed In As: {{nav.username}}</a>
+                        <li ng-if="nav.username"><a href="#/campgrounds/yourpost">Your Posts</a>
+                        <li ng-if="nav.username"><a logout href="" ng-click="logout()" >Logout</a></li>
                 </ul>
             </div>
         </div>
